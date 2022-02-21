@@ -82,13 +82,13 @@ h2 {
 }
 
 /* Icon Style */
-.fa-magnifying-glass {
+/* .fa-magnifying-glass {
     position: absolute;
     color: #111;
     font-size: 1.5rem;
     top: 2rem;
     right: 5.7rem;
-}
+} */
 
 input[type=text] {
     width: 100px;

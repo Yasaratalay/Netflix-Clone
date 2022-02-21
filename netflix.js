@@ -1,12 +1,14 @@
-const nav = document.getElementById("nav");
+const nav = document.querySelector(".nav");
+const searchInput = document.querySelector(".searchInput");
 
 window.addEventListener("scroll", scrollActive);
 
-// Scroll aşağı indiği zaman navbar'a efekt ekledik.
 function scrollActive(e) {
     if (window.scrollY >= 100) {
-        nav.classList.add("searchInput");
+        nav.classList.add("navBlack");
+        searchInput.classList.add("searchInput");
     } else {
-        nav.classList.remove("searchInput");
+        nav.classList.remove("navBlack");
+        searchInput.classList.remove("searchInput");
     }
 }
