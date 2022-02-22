@@ -22,6 +22,8 @@
         <div class="ml-auto p-2">
             <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
             <input type="text" name="search" placeholder="Search..." class="searchInput">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add
+                Movie</button>
             <img src="images/netflix-avatar.png" alt="" class="avatar-logo">
         </div>
     </ul>
@@ -30,59 +32,90 @@
         <!-- Nav altında banner fotoğraf. Stlye kısmında eklendi. -->
     </div>
 
+    <div class="btnAddMovie">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5>Todo Movie</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1">Yüklemek istediğiniz fotoğrafı seçin.</label>
+                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Konu:</label>
+                                <textarea class="form-control" id="message-text"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-success">Add Movie</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container-fluid">
-        <!-- Netflix Originals -->
-        <h2>NETFLIX ORIGINALS</h2>
-        <div class="d-flex" id="originals">
-            <img src="images/large-movie1.jpg" alt="" class="img_Large">
-            <img src="images/large-movie2.jpg" alt="" class="img_Large">
-            <img src="images/large-movie3.jpg" alt="" class="img_Large">
-            <img src="images/large-movie4.jpg" alt="" class="img_Large">
-            <img src="images/large-movie5.jpg" alt="" class="img_Large">
-            <img src="images/large-movie6.jpg" alt="" class="img_Large">
-            <img src="images/large-movie7.jpg" alt="" class="img_Large">
-            <img src="images/large-movie8.jpg" alt="" class="img_Large">
-        </div>
+        <div class="card-body">
+            <!-- Netflix Originals -->
+            <h2>NETFLIX ORIGINALS</h2>
+            <div class="d-flex" id="originals">
+                <img src="images/large-movie1.jpg" alt="" class="img_Large">
+                <img src="images/large-movie2.jpg" alt="" class="img_Large">
+                <img src="images/large-movie3.jpg" alt="" class="img_Large">
+                <img src="images/large-movie4.jpg" alt="" class="img_Large">
+                <img src="images/large-movie5.jpg" alt="" class="img_Large">
+                <img src="images/large-movie6.jpg" alt="" class="img_Large">
+                <img src="images/large-movie7.jpg" alt="" class="img_Large">
+                <img src="images/large-movie8.jpg" alt="" class="img_Large">
+            </div>
 
+            <!-- Top Rated -->
+            <h2>Top Rated</h2>
+            <div class="d-flex" id="toprated">
+                <img src="images/small-movie1.jpg" alt="" class="col-md-2 img_Small">
+                <img src="images/small-movie2.jpg" alt="" class="col-md-2 img_Small">
+                <img src="images/small-movie3.jpg" alt="" class="col-md-2 img_Small">
+                <img src="images/small-movie4.jpg" alt="" class="col-md-2 img_Small">
+                <img src="images/small-movie5.jpg" alt="" class="col-md-2 img_Small">
+                <img src="images/small-movie6.jpg" alt="" class="col-md-2 img_Small">
+                <img src="images/small-movie7.jpg" alt="" class="col-md-2 img_Small">
+                <img src="images/small-movie8.jpg" alt="" class="col-md-2 img_Small">
+            </div>
 
-        <!-- Top Rated -->
-        <h2>Top Rated</h2>
-        <div class="d-flex" id="toprated">
-            <img src="images/small-movie1.jpg" alt="" class="img_Small">
-            <img src="images/small-movie2.jpg" alt="" class="img_Small">
-            <img src="images/small-movie3.jpg" alt="" class="img_Small">
-            <img src="images/small-movie4.jpg" alt="" class="img_Small">
-            <img src="images/small-movie5.jpg" alt="" class="img_Small">
-            <img src="images/small-movie6.jpg" alt="" class="img_Small">
-            <img src="images/small-movie7.jpg" alt="" class="img_Small">
-            <img src="images/small-movie8.jpg" alt="" class="img_Small">
+            <!-- Action Movies -->
+            <h2>Action Movies</h2>
+            <div class="d-flex" id="actionMov">
+                <img src="images/small-movie1.jpg" alt="" class="col-sm-2 img_Small">
+                <img src="images/small-movie2.jpg" alt="" class="col-sm-2 img_Small">
+                <img src="images/small-movie3.jpg" alt="" class="col-sm-2 img_Small">
+                <img src="images/small-movie4.jpg" alt="" class="col-sm-2 img_Small">
+                <img src="images/small-movie5.jpg" alt="" class="col-sm-2 img_Small">
+                <img src="images/small-movie6.jpg" alt="" class="col-sm-2 img_Small">
+                <img src="images/small-movie7.jpg" alt="" class="col-sm-2 img_Small">
+                <img src="images/small-movie8.jpg" alt="" class="col-sm-2 img_Small">
+            </div>
 
-        </div>
-
-        <!-- Action Movies -->
-        <h2>Action Movies</h2>
-        <div class="d-flex" id="actionMov">
-            <img src="images/small-movie1.jpg" alt="" class="img_Small">
-            <img src="images/small-movie2.jpg" alt="" class="img_Small">
-            <img src="images/small-movie3.jpg" alt="" class="img_Small">
-            <img src="images/small-movie4.jpg" alt="" class="img_Small">
-            <img src="images/small-movie5.jpg" alt="" class="img_Small">
-            <img src="images/small-movie6.jpg" alt="" class="img_Small">
-            <img src="images/small-movie7.jpg" alt="" class="img_Small">
-            <img src="images/small-movie8.jpg" alt="" class="img_Small">
-        </div>
-
-        <!-- Horror Movies -->
-        <h2>Horror Movies</h2>
-        <div class="d-flex" id="horrorMov">
-            <img src="images/small-movie1.jpg" alt="" class="img_Small">
-            <img src="images/small-movie2.jpg" alt="" class="img_Small">
-            <img src="images/small-movie3.jpg" alt="" class="img_Small">
-            <img src="images/small-movie4.jpg" alt="" class="img_Small">
-            <img src="images/small-movie5.jpg" alt="" class="img_Small">
-            <img src="images/small-movie6.jpg" alt="" class="img_Small">
-            <img src="images/small-movie7.jpg" alt="" class="img_Small">
-            <img src="images/small-movie8.jpg" alt="" class="img_Small">
+            <!-- Horror Movies -->
+            <h2>Horror Movies</h2>
+            <div class="d-flex" id="horrorMov">
+                <img src="images/small-movie1.jpg" alt="" class="col-sm-2 img_Small">
+                <img src="images/small-movie2.jpg" alt="" class="col-sm-2 img_Small">
+                <img src="images/small-movie3.jpg" alt="" class="col-sm-2 img_Small">
+                <img src="images/small-movie4.jpg" alt="" class="col-sm-2 img_Small">
+                <img src="images/small-movie5.jpg" alt="" class="col-sm-2 img_Small">
+                <img src="images/small-movie6.jpg" alt="" class="col-sm-2 img_Small">
+                <img src="images/small-movie7.jpg" alt="" class="col-sm-2 img_Small">
+                <img src="images/small-movie8.jpg" alt="" class="col-sm-2 img_Small">
+            </div>
         </div>
     </div>
 
