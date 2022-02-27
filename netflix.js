@@ -1,6 +1,44 @@
 const nav = document.querySelector(".nav");
 const searchInput = document.querySelector(".searchInput");
 
+const initialiseApp = () => {
+    initialiseMovies();
+    initialiseCategories();
+}
+
+const initialiseMovies = () => {
+    fetch("http://localhost:3000/movies")
+    .then(response => response.json())
+    .then(response => setMovies(response));
+}
+
+setMovies = (response) => {
+    if (response) {
+        let originalElm = $("#originals");
+        originalElm.children().remove();
+
+        _.each(response, function(movie) {
+            originalElm.append(`<img src="${movie.thumbnail}" alt="${movie.name}" class="img_Large">`)
+        })
+    }
+}
+
+const initialiseCategories = () => {
+    fetch("http://localhost:3000/categories")
+    .then(response => response.json())
+    .then(response => console.log(response));
+}
+
+$("input[name='search']").on("keydown", _.debounce(function(e){
+    if (this.value) {
+        fetch("http://localhost:3000/movies?name_like=" + this.value)
+        .then(response => response.json())
+        .then(response => setMovies(response))
+    } else {
+        initialiseMovies();
+    }
+}, 500));
+
 window.addEventListener("scroll", scrollActive);
 
 function scrollActive(e) {
@@ -20,3 +58,5 @@ $('#exampleModal').on('show.bs.modal', function (event) {
     modal.find('.modal-title').text('New message to ' + recipient);
     modal.find('.modal-body input').val(recipient);
 })
+
+initialiseApp();

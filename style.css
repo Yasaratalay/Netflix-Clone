@@ -33,7 +33,7 @@ body {
     z-index: 1;
     transition-timing-function: ease-in;
     transition: all 1s;
-    opacity: 0;
+    display: none;
 }
 
 .banner {
