@@ -1,4 +1,4 @@
-const nav = document.querySelector(".nav");
+const nav = document.querySelector(".navbar");
 const searchInput = document.querySelector(".searchInput");
 
 const initialiseApp = () => {
@@ -8,8 +8,8 @@ const initialiseApp = () => {
 
 const initialiseMovies = () => {
     fetch("http://localhost:3000/movies")
-    .then(response => response.json())
-    .then(response => setMovies(response));
+        .then(response => response.json())
+        .then(response => setMovies(response));
 }
 
 setMovies = (response) => {
@@ -17,7 +17,7 @@ setMovies = (response) => {
         let originalElm = $("#originals");
         originalElm.children().remove();
 
-        _.each(response, function(movie) {
+        _.each(response, function (movie) {
             originalElm.append(`<img src="${movie.thumbnail}" alt="${movie.name}" class="img_Large">`)
         })
     }
@@ -25,15 +25,15 @@ setMovies = (response) => {
 
 const initialiseCategories = () => {
     fetch("http://localhost:3000/categories")
-    .then(response => response.json())
-    .then(response => console.log(response));
+        .then(response => response.json())
+        .then(response => console.log(response));
 }
 
-$("input[name='search']").on("keydown", _.debounce(function(e){
+$("input[name='search']").on("keydown", _.debounce(function (e) {
     if (this.value) {
         fetch("http://localhost:3000/movies?name_like=" + this.value)
-        .then(response => response.json())
-        .then(response => setMovies(response))
+            .then(response => response.json())
+            .then(response => setMovies(response))
     } else {
         initialiseMovies();
     }
@@ -44,10 +44,8 @@ window.addEventListener("scroll", scrollActive);
 function scrollActive(e) {
     if (window.scrollY >= 100) {
         nav.classList.add("navBlack");
-        searchInput.classList.add("searchInput");
     } else {
         nav.classList.remove("navBlack");
-        searchInput.classList.remove("searchInput");
     }
 }
 

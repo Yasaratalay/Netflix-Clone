@@ -14,7 +14,7 @@ body {
     border-radius: 1.5rem;
 }
 
-.nav {
+.navbar {
     position: fixed;
     top: 0;
     width: 100%;
@@ -30,10 +30,11 @@ body {
 }
 
 .searchInput {
-    z-index: 1;
-    transition-timing-function: ease-in;
-    transition: all 1s;
-    display: none;
+    width: 12rem;
+    height: 2rem;
+    margin-top: 1.4rem;
+    border-radius: 10rem;
+    border: 0.2rem solid #fff;
 }
 
 .banner {
@@ -42,11 +43,13 @@ body {
     background-position: center center;
     color: white;
     object-fit: contain;
-    height: 700px;
+    height: 800px;
 }
 
+
+
 .img_Large {
-    width: 300px;
+    width: 230px;
     height: 300px;
     padding: 0.5rem;
     padding-left: 1rem;
@@ -82,35 +85,23 @@ h2 {
 }
 
 /* Icon Style */
-/* .fa-magnifying-glass {
+.fa-magnifying-glass {
     position: absolute;
     color: #111;
-    font-size: 1.5rem;
-    top: 2rem;
+    font-size: 1.3rem;
+    top: 36px;
     right: 5.7rem;
-} */
-
-input[type=text] {
-    width: 100px;
-    height: 1.6rem;
-    margin-top: 1.5rem;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    font-size: 16px;
-    background-color: white;
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    -webkit-transition: width 0.4s ease-in;
-    transition: width 0.4s ease-in-out;
+    right: 325px;
 }
 
-input[type=text]:focus {
-    width: 250px;
+
+.btn.btn-primary {
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent;
 }
 
-.btn.btn-primary{
-   color: #fff;
-   background-color: transparent;
-   border-color: transparent;
+#navbarScrollingDropdown {
+    padding-top: 2px;
+    color: white;
 }
