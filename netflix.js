@@ -1,5 +1,4 @@
 const nav = document.querySelector(".navbar");
-const searchInput = document.querySelector(".searchInput");
 
 const initialiseApp = () => {
     initialiseMovies();
@@ -48,13 +47,5 @@ function scrollActive(e) {
         nav.classList.remove("navBlack");
     }
 }
-
-$('#exampleModal').on('show.bs.modal', function (event) {
-    let button = $(event.relatedTarget);
-    let recipient = button.data('whatever');
-    let modal = $(this);
-    modal.find('.modal-title').text('New message to ' + recipient);
-    modal.find('.modal-body input').val(recipient);
-})
 
 initialiseApp();
