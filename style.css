@@ -95,7 +95,7 @@ h2 {
 }
 
 
-.btn.btn-primary.staticBackdrop {
+.btn.btn-primary.staticBackdrop, .btn.btn-danger.deleteBackdrop {
     color: #fff;
     background-color: transparent;
     border-color: transparent;

@@ -18,14 +18,16 @@
         <img src="images/netflix-logo.png" alt="" class="navbar-brand logo">
         <form class="form-inline" name="form">
             <div class="form-col">
+                <button class="btn btn-primary staticBackdrop" data-toggle="modal" data-target="#staticBackdrop">Add
+                    Movie</button>
+                <button class="btn btn-danger deleteBackdrop" data-toggle="modal" data-target="#deleteBackdrop">Delete
+                    Movie</button>
                 <select class="custom-select mr-sm-2" id="searchCategory" required>
                     <option selected>Search Category...</option>
                     <option value="1">Korku</option>
                     <option value="2">Komedi</option>
                     <option value="3">Aksiyon</option>
                 </select>
-                <button class="btn btn-primary staticBackdrop" data-toggle="modal" data-target="#staticBackdrop">Add
-                    Movie</button>
                 <input type="text" name="search" placeholder="Search..." class="form-control mr-sm-2 searchInput">
                 <img src="images/netflix-avatar.png" alt="" class="avatar-logo">
             </div>
@@ -54,46 +56,46 @@
         </div>
         <!-- Top Rated -->
         <h2>Top Rated</h2>
-            <div class="d-flex" id="toprated">
-                <img src="images/small-movie1.jpg" alt="" class="col-md-2 img_Small">
-                <img src="images/small-movie2.jpg" alt="" class="col-md-2 img_Small">
-                <img src="images/small-movie3.jpg" alt="" class="col-md-2 img_Small">
-                <img src="images/small-movie4.jpg" alt="" class="col-md-2 img_Small">
-                <img src="images/small-movie5.jpg" alt="" class="col-md-2 img_Small">
-                <img src="images/small-movie6.jpg" alt="" class="col-md-2 img_Small">
-                <img src="images/small-movie7.jpg" alt="" class="col-md-2 img_Small">
-                <img src="images/small-movie8.jpg" alt="" class="col-md-2 img_Small">
-            </div>
+        <div class="d-flex" id="toprated">
+            <img src="images/small-movie1.jpg" alt="" class="col-md-2 img_Small">
+            <img src="images/small-movie2.jpg" alt="" class="col-md-2 img_Small">
+            <img src="images/small-movie3.jpg" alt="" class="col-md-2 img_Small">
+            <img src="images/small-movie4.jpg" alt="" class="col-md-2 img_Small">
+            <img src="images/small-movie5.jpg" alt="" class="col-md-2 img_Small">
+            <img src="images/small-movie6.jpg" alt="" class="col-md-2 img_Small">
+            <img src="images/small-movie7.jpg" alt="" class="col-md-2 img_Small">
+            <img src="images/small-movie8.jpg" alt="" class="col-md-2 img_Small">
+        </div>
 
         <!-- Action Movies -->
         <h2>Action Movies</h2>
-            <div class="d-flex" id="actionMov">
-                <img src="images/small-movie1.jpg" alt="" class="col-sm-2 img_Small">
-                <img src="images/small-movie2.jpg" alt="" class="col-sm-2 img_Small">
-                <img src="images/small-movie3.jpg" alt="" class="col-sm-2 img_Small">
-                <img src="images/small-movie4.jpg" alt="" class="col-sm-2 img_Small">
-                <img src="images/small-movie5.jpg" alt="" class="col-sm-2 img_Small">
-                <img src="images/small-movie6.jpg" alt="" class="col-sm-2 img_Small">
-                <img src="images/small-movie7.jpg" alt="" class="col-sm-2 img_Small">
-                <img src="images/small-movie8.jpg" alt="" class="col-sm-2 img_Small">
-            </div>
+        <div class="d-flex" id="actionMov">
+            <img src="images/small-movie1.jpg" alt="" class="col-sm-2 img_Small">
+            <img src="images/small-movie2.jpg" alt="" class="col-sm-2 img_Small">
+            <img src="images/small-movie3.jpg" alt="" class="col-sm-2 img_Small">
+            <img src="images/small-movie4.jpg" alt="" class="col-sm-2 img_Small">
+            <img src="images/small-movie5.jpg" alt="" class="col-sm-2 img_Small">
+            <img src="images/small-movie6.jpg" alt="" class="col-sm-2 img_Small">
+            <img src="images/small-movie7.jpg" alt="" class="col-sm-2 img_Small">
+            <img src="images/small-movie8.jpg" alt="" class="col-sm-2 img_Small">
+        </div>
 
         <!-- Horror Movies -->
         <h2>Horror Movies</h2>
-            <div class="d-flex" id="horrorMov">
-                <img src="images/small-movie1.jpg" alt="" class="col-sm-2 img_Small">
-                <img src="images/small-movie2.jpg" alt="" class="col-sm-2 img_Small">
-                <img src="images/small-movie3.jpg" alt="" class="col-sm-2 img_Small">
-                <img src="images/small-movie4.jpg" alt="" class="col-sm-2 img_Small">
-                <img src="images/small-movie5.jpg" alt="" class="col-sm-2 img_Small">
-                <img src="images/small-movie6.jpg" alt="" class="col-sm-2 img_Small">
-                <img src="images/small-movie7.jpg" alt="" class="col-sm-2 img_Small">
-                <img src="images/small-movie8.jpg" alt="" class="col-sm-2 img_Small">
-            </div>
+        <div class="d-flex" id="horrorMov">
+            <img src="images/small-movie1.jpg" alt="" class="col-sm-2 img_Small">
+            <img src="images/small-movie2.jpg" alt="" class="col-sm-2 img_Small">
+            <img src="images/small-movie3.jpg" alt="" class="col-sm-2 img_Small">
+            <img src="images/small-movie4.jpg" alt="" class="col-sm-2 img_Small">
+            <img src="images/small-movie5.jpg" alt="" class="col-sm-2 img_Small">
+            <img src="images/small-movie6.jpg" alt="" class="col-sm-2 img_Small">
+            <img src="images/small-movie7.jpg" alt="" class="col-sm-2 img_Small">
+            <img src="images/small-movie8.jpg" alt="" class="col-sm-2 img_Small">
+        </div>
 
     </div>
 
-    <!-- Modal -->
+    <!-- Modal Post -->
     <div class="modal fade staticBackdrop" id="staticBackdrop" data-backdrop="static" data-keyboard="false"
         tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -114,10 +116,6 @@
                             <label for="exampleFormControlFile1">Movie Photograph</label>
                             <input type="file" class="form-control-file" id="movieFile" required>
                         </div>
-                        <!-- <div class="form-group">
-                            <label for="updateSalary">Image Url</label>
-                            <input type="number" step="any" class="form-control" id="movieImg">
-                        </div> -->
                         <div class="form-group">
                             <select class="custom-select mr-sm-2" id="movieCategory" required>
                                 <option selected disabled>Choose Movie...</option>
@@ -131,6 +129,38 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary" id="confirmMovie">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Delete -->
+    <div class="modal fade deleteBackdrop" id="deleteBackdrop" data-backdrop="static" data-keyboard="false"
+        tabindex="-1" aria-labelledby="deleteBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteBackdropLabel">Delete Form</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="updateName">Films Name:</label>
+                            <select class="custom-select mr-sm-2" id="deleteSearchList" required>
+                                <!-- <option selected disabled>Choose Movie...</option>
+                                <option value="1">Korku</option>
+                                <option value="2">Komedi</option>
+                                <option value="3">Aksiyon</option> -->
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" id="deleteMovie">Delete</button>
                 </div>
             </div>
         </div>

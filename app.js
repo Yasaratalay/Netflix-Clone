@@ -1,5 +1,6 @@
 const initialApp = () => {
     let fileName; // dosyanın uzantısını alıyoruz.
+    let deleteFilm;
     const nav = document.querySelector(".navbar");
     window.addEventListener("scroll", scrollActive);
 
@@ -43,10 +44,15 @@ const modalToggle = () => $(".staticBackdrop").modal("toggle");
 // Update - Insert - Delete İşlemleri
 const setMovies = (movies) => {
     let originalMovie = $("#originals");
-    originalMovie.children().remove();
+    let deleteMovieFromList = $("#deleteSearchList");
 
+    originalMovie.children().remove();
+    deleteMovieFromList.children().remove();
+
+    // <option value="1">Korku</option>
     _.each(movies, function (movie) {
         originalMovie.append(`<img src="${movie.thumbnail}" alt="${movie.name}" data-movieid=${movie.id} class="img_Large">`)
+        deleteMovieFromList.append(`<option value="${movie.id}">${movie.name}</option>`)
     })
 
     $(".searchInput").on("keydown", debounce((e) => {
@@ -87,7 +93,7 @@ $("#confirmMovie").click(() => {
 
         Toast.fire({
             icon: 'success',
-            title: 'Signed in successfully'
+            title: 'Film eklendi.'
         })
         setTimeout(() => {
             fetch('http://localhost:3000/movies', {
@@ -107,13 +113,65 @@ $("#confirmMovie").click(() => {
                 .catch(err => console.log("Error Add Movie!"));
         }, 2500);
     }
+});
 
+$("#deleteMovie").on("click", () => {
 
+    // Sweet Alert Silme işlemi uyarı mesajı
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: 'btn btn-success',
+            cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+    })
+    swalWithBootstrapButtons.fire({
+        title: 'Film silinsin mi?',
+        text: "Silinen film geri alınamaz.",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Sil',
+        cancelButtonText: 'İptal',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'bottom-end',
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
 
+            Toast.fire({
+                icon: 'success',
+                title: 'Film silindi.'
+            })
+            setTimeout(() => {
+                deleteFilm = Number($('#deleteSearchList').val())
+                fetch(`http://localhost:3000/movies/${deleteFilm}`, {
+                        method: 'DELETE'
+                    })
+                    .then(refUser => handleMovies())
+                    .catch(err => console.log("Delete Error!"));
+            }, 2500);
+        } else if (
+            result.dismiss === Swal.DismissReason.cancel
+        ) {
+            swalWithBootstrapButtons.fire(
+                '',
+                'Silme işlemi iptal edildi.',
+                'error'
+            )
+        }
+    })
 });
 
 $("#searchCategory").on("change", () => {
-    debugger
     let valueSelect = Number($('#searchCategory').val());
     if (valueSelect >= 1) {
         fetch(`http://localhost:3000/movies?categoryId=${valueSelect}`, {

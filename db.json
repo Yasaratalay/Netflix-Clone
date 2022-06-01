@@ -8,32 +8,18 @@
       "id": 1
     },
     {
-      "name": "Hunter",
-      "thumbnail": "images/large-movie3.jpg",
-      "categoryname": "Korku",
-      "categoryId": 1,
+      "name": "Luis",
+      "thumbnail": "images/large-movie1.jpg",
+      "categoryname": "Komedi",
+      "categoryId": 2,
       "id": 2
     },
     {
-      "name": "Hee",
-      "thumbnail": "images/large-movie1.jpg",
-      "categoryname": "Aksiyon",
-      "categoryId": 3,
-      "id": 3
-    },
-    {
-      "name": "Star Wars",
-      "thumbnail": "images/large-movie4.jpg",
-      "categoryname": "Komedi",
-      "categoryId": 2,
+      "name": "Haunted",
+      "thumbnail": "images/large-movie3.jpg",
+      "categoryname": "Korku",
+      "categoryId": 1,
       "id": 4
-    },
-    {
-      "name": "Yaşar",
-      "thumbnail": "images/large-movie2.jpg",
-      "categoryname": "Komedi",
-      "categoryId": 2,
-      "id": 5
     }
   ]
 }
