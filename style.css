@@ -44,7 +44,6 @@ body {
     color: white;
     object-fit: contain;
     height: 800px;
-    
 }
 
 
@@ -95,7 +94,8 @@ h2 {
 }
 
 
-.btn.btn-primary.staticBackdrop, .btn.btn-danger.deleteBackdrop {
+.btn.btn-primary.staticBackdrop,
+.btn.btn-danger.deleteBackdrop {
     color: #fff;
     background-color: transparent;
     border-color: transparent;
