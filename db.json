@@ -1,81 +1,39 @@
 {
-    "movies": [{
-            "id": 1,
-            "name": "Luis Miguel",
-            "description": "Gato Grande Productions ile birlikte Netflix ve Telemundo için MGM Television tarafından üretilen İspanyolca bir Amerikan biyografik televizyon dizisidir.",
-            "categoryId": 2,
-            "thumbnail": "images/large-movie1.jpg"
-        },
-        {
-            "id": 2,
-            "name": "Lucifer",
-            "description": "Lucifer, Tom Kapinos tarafından yaratılan Amerikan fantastik polisiye komedi-drama dizisi.",
-            "categoryId": 2,
-            "thumbnail": "images/large-movie2.jpg"
-        },
-        {
-            "id": 3,
-            "name": "Haunted",
-            "description": "Perili, Propagate tarafından geliştirilen doğaüstü bir sözde belgesel.",
-            "categoryId": 1,
-            "thumbnail": "images/large-movie3.jpg"
-        },
-        {
-            "id": 4,
-            "name": "Who Killed Sarra?",
-            "description": "José Ignacio Valenzuela tarafından yaratılan ve yapımcılığını Perro Azul'un üstlendiği, 24 Mart 2021'de Netflix'te yayınlanan Meksika yapımı bir gizem gerilim dizisidir.",
-            "categoryId": [1, 2],
-            "thumbnail": "images/large-movie4.jpg"
-        },
-        {
-            "id": 5,
-            "name": "Cobra Kai",
-            "description": "Cobra Kai bir Amerikan dövüş sanatları komedi-drama dizisidir.",
-            "categoryId": 3,
-            "thumbnail": "images/large-movie5.jpg"
-        },
-        {
-            "id": 6,
-            "name": "Elite",
-            "description": "Elite, Carlos Montero ve Darío Madrona tarafından Netflix için oluşturulan bir İspanyol gerilim, gençlik drama dizisidir.",
-            "categoryId": [2, 3, 4],
-            "thumbnail": "images/large-movie6.jpg"
-        },
-        {
-            "id": 7,
-            "name": "Transformers: war for cybertron trilogy",
-            "description": "Transformers Filmi",
-            "categoryId": [2, 3],
-            "thumbnail": "images/large-movie7.jpg"
-        },
-        {
-            "id": 8,
-            "name": "The Umbrella Academy",
-            "description": "The Umbrella Academy dizinin kendi adından olan The Umbrella Academy adlı romandan uyarlanmış Amerikan bilimkurgu dizisidir.",
-            "categoryId": 5,
-            "thumbnail": "images/large-movie8.jpg"
-        }
-
-    ],
-    "categories": [{
-            "id": 1,
-            "name": "Korku"
-        },
-        {
-            "id": 2,
-            "name": "Aksiyon"
-        },
-        {
-            "id": 3,
-            "name": "Komedi"
-        },
-        {
-            "id": 4,
-            "name": "Dram"
-        },
-        {
-            "id": 5,
-            "name": "Bilim Kurgu"
-        }
-    ]
+  "movies": [
+    {
+      "name": "Lucifer",
+      "thumbnail": "images/large-movie2.jpg",
+      "categoryname": "Aksiyon",
+      "categoryId": 3,
+      "id": 1
+    },
+    {
+      "name": "Hunter",
+      "thumbnail": "images/large-movie3.jpg",
+      "categoryname": "Korku",
+      "categoryId": 1,
+      "id": 2
+    },
+    {
+      "name": "Hee",
+      "thumbnail": "images/large-movie1.jpg",
+      "categoryname": "Aksiyon",
+      "categoryId": 3,
+      "id": 3
+    },
+    {
+      "name": "Star Wars",
+      "thumbnail": "images/large-movie4.jpg",
+      "categoryname": "Komedi",
+      "categoryId": 2,
+      "id": 4
+    },
+    {
+      "name": "Yaşar",
+      "thumbnail": "images/large-movie2.jpg",
+      "categoryname": "Komedi",
+      "categoryId": 2,
+      "id": 5
+    }
+  ]
 }

@@ -32,10 +32,10 @@ body {
 .searchInput {
     width: 12rem;
     height: 2rem;
-    margin-top: 1.4rem;
     border-radius: 10rem;
     border: 0.2rem solid #fff;
 }
+
 
 .banner {
     background-image: url('images/Squidgame.jpg');
@@ -44,7 +44,9 @@ body {
     color: white;
     object-fit: contain;
     height: 800px;
+    
 }
+
 
 .img_Large {
     width: 230px;
@@ -93,13 +95,24 @@ h2 {
 }
 
 
-.btn.btn-primary {
+.btn.btn-primary.staticBackdrop {
     color: #fff;
     background-color: transparent;
     border-color: transparent;
 }
 
-#navbarScrollingDropdown {
+
+#navbarDropdownMenuLink {
+    color: #fff;
+}
+
+#actionMethod {
     padding-top: 2px;
     color: white;
+}
+
+#searchCategory {
+    width: 10.5rem;
+    height: 2.5rem;
+    border-radius: 10rem;
 }

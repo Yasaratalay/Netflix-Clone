@@ -15,12 +15,21 @@
 
 <body>
     <nav class="navbar navbar-expand-lg">
-        <img src="images/netflix-logo.png" alt="" class="logo">
-        <div class="d-flex">
-            <input type="text" name="search" placeholder="Search..." class="searchInput">
-
-            <img src="images/netflix-avatar.png" alt="" class="avatar-logo">
-        </div>
+        <img src="images/netflix-logo.png" alt="" class="navbar-brand logo">
+        <form class="form-inline" name="form">
+            <div class="form-col">
+                <select class="custom-select mr-sm-2" id="searchCategory" required>
+                    <option selected>Search Category...</option>
+                    <option value="1">Korku</option>
+                    <option value="2">Komedi</option>
+                    <option value="3">Aksiyon</option>
+                </select>
+                <button class="btn btn-primary staticBackdrop" data-toggle="modal" data-target="#staticBackdrop">Add
+                    Movie</button>
+                <input type="text" name="search" placeholder="Search..." class="form-control mr-sm-2 searchInput">
+                <img src="images/netflix-avatar.png" alt="" class="avatar-logo">
+            </div>
+        </form>
     </nav>
 
     <div class="banner">
@@ -33,18 +42,18 @@
             <!-- Netflix Originals -->
             <h2>NETFLIX ORIGINALS</h2>
             <div class="d-flex" id="originals">
-                <img src="images/large-movie1.jpg" alt="" class="img_Large">
+                <!-- <img src="images/large-movie1.jpg" alt="" class="img_Large">
                 <img src="images/large-movie2.jpg" alt="" class="img_Large">
                 <img src="images/large-movie3.jpg" alt="" class="img_Large">
                 <img src="images/large-movie4.jpg" alt="" class="img_Large">
                 <img src="images/large-movie5.jpg" alt="" class="img_Large">
                 <img src="images/large-movie6.jpg" alt="" class="img_Large">
                 <img src="images/large-movie7.jpg" alt="" class="img_Large">
-                <img src="images/large-movie8.jpg" alt="" class="img_Large">
+                <img src="images/large-movie8.jpg" alt="" class="img_Large"> -->
             </div>
-
-            <!-- Top Rated -->
-            <!-- <h2>Top Rated</h2>
+        </div>
+        <!-- Top Rated -->
+        <h2>Top Rated</h2>
             <div class="d-flex" id="toprated">
                 <img src="images/small-movie1.jpg" alt="" class="col-md-2 img_Small">
                 <img src="images/small-movie2.jpg" alt="" class="col-md-2 img_Small">
@@ -54,10 +63,10 @@
                 <img src="images/small-movie6.jpg" alt="" class="col-md-2 img_Small">
                 <img src="images/small-movie7.jpg" alt="" class="col-md-2 img_Small">
                 <img src="images/small-movie8.jpg" alt="" class="col-md-2 img_Small">
-            </div> -->
+            </div>
 
-            <!-- Action Movies -->
-            <!-- <h2>Action Movies</h2>
+        <!-- Action Movies -->
+        <h2>Action Movies</h2>
             <div class="d-flex" id="actionMov">
                 <img src="images/small-movie1.jpg" alt="" class="col-sm-2 img_Small">
                 <img src="images/small-movie2.jpg" alt="" class="col-sm-2 img_Small">
@@ -67,10 +76,10 @@
                 <img src="images/small-movie6.jpg" alt="" class="col-sm-2 img_Small">
                 <img src="images/small-movie7.jpg" alt="" class="col-sm-2 img_Small">
                 <img src="images/small-movie8.jpg" alt="" class="col-sm-2 img_Small">
-            </div> -->
+            </div>
 
-            <!-- Horror Movies -->
-            <!-- <h2>Horror Movies</h2>
+        <!-- Horror Movies -->
+        <h2>Horror Movies</h2>
             <div class="d-flex" id="horrorMov">
                 <img src="images/small-movie1.jpg" alt="" class="col-sm-2 img_Small">
                 <img src="images/small-movie2.jpg" alt="" class="col-sm-2 img_Small">
@@ -80,9 +89,54 @@
                 <img src="images/small-movie6.jpg" alt="" class="col-sm-2 img_Small">
                 <img src="images/small-movie7.jpg" alt="" class="col-sm-2 img_Small">
                 <img src="images/small-movie8.jpg" alt="" class="col-sm-2 img_Small">
-            </div> -->
+            </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade staticBackdrop" id="staticBackdrop" data-backdrop="static" data-keyboard="false"
+        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Add New Movie</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="updateName">Movie Name</label>
+                            <input type="text" class="form-control" id="movieName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">Movie Photograph</label>
+                            <input type="file" class="form-control-file" id="movieFile" required>
+                        </div>
+                        <!-- <div class="form-group">
+                            <label for="updateSalary">Image Url</label>
+                            <input type="number" step="any" class="form-control" id="movieImg">
+                        </div> -->
+                        <div class="form-group">
+                            <select class="custom-select mr-sm-2" id="movieCategory" required>
+                                <option selected disabled>Choose Movie...</option>
+                                <option value="1">Korku</option>
+                                <option value="2">Komedi</option>
+                                <option value="3">Aksiyon</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="confirmMovie">Confirm</button>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
@@ -92,7 +146,7 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.js"
         integrity="sha256-TARWG+/fZTrvAXpCrFrd9o6pQ838pr3uXOBOBOgTn1Q=" crossorigin="anonymous"></script>
-    <script src="netflix.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
