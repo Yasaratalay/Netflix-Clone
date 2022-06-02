@@ -18,12 +18,14 @@
         <img src="images/netflix-logo.png" alt="" class="navbar-brand logo">
         <form class="form-inline" name="form">
             <div class="form-col">
-                <button type="button" class="btn btn-primary staticBackdrop" data-toggle="modal" data-target="#staticBackdrop">Add
+                <button type="button" class="btn btn-primary staticBackdrop" data-toggle="modal"
+                    data-target="#staticBackdrop"><i class="fa-solid fa-square-plus" style="padding-right: 5px;"></i>Add
                     Movie</button>
                 <button type="button" class="btn btn-danger deleteBackdrop" data-toggle="modal"
-                    data-target="#deleteBackdrop">DeleteMovie</button>
+                    data-target="#deleteBackdrop"><i class="fa-solid fa-trash-can"
+                        style="padding-right: 5px;"></i>DeleteMovie</button>
                 <select class="custom-select mr-sm-2" id="searchCategory" required>
-                    <option selected>Search Category...</option>
+                    <option selected>Hepsi...</option>
                     <option value="1">Korku</option>
                     <option value="2">Komedi</option>
                     <option value="3">Aksiyon</option>
@@ -43,15 +45,11 @@
         <div class="card-body">
             <!-- Netflix Originals -->
             <h2>NETFLIX ORIGINALS</h2>
+            <div id="iconPlace">
+                <!-- Buraya Silme iconları gelecek. -->
+            </div>
             <div class="d-flex" id="originals">
-                <!-- <img src="images/large-movie1.jpg" alt="" class="img_Large">
-                <img src="images/large-movie2.jpg" alt="" class="img_Large">
-                <img src="images/large-movie3.jpg" alt="" class="img_Large">
-                <img src="images/large-movie4.jpg" alt="" class="img_Large">
-                <img src="images/large-movie5.jpg" alt="" class="img_Large">
-                <img src="images/large-movie6.jpg" alt="" class="img_Large">
-                <img src="images/large-movie7.jpg" alt="" class="img_Large">
-                <img src="images/large-movie8.jpg" alt="" class="img_Large"> -->
+                <!-- Buraya Film afişleri gelecek. -->
             </div>
         </div>
         <!-- Top Rated -->
@@ -117,8 +115,9 @@
                             <input type="file" class="form-control-file" id="movieFile" required>
                         </div>
                         <div class="form-group">
+                            <label for="updateName">Category</label>
                             <select class="custom-select mr-sm-2" id="movieCategory" required>
-                                <option selected disabled>Choose Category...</option>
+                                <option selected disabled></option>
                                 <option value="1">Korku</option>
                                 <option value="2">Komedi</option>
                                 <option value="3">Aksiyon</option>

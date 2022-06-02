@@ -44,13 +44,16 @@ body {
     color: white;
     object-fit: contain;
     height: 800px;
+    box-shadow: 50px 50px 50px 50px black;
+
 }
 
 
 .img_Large {
     width: 230px;
     height: 300px;
-    padding: 0.5rem;
+    /* padding: 0.5rem; */
+    padding-top: 25px;
     padding-left: 1rem;
     transition: transform 500ms;
     border-radius: 15px;
@@ -80,6 +83,7 @@ body {
 h2 {
     padding-top: 3rem;
     padding-left: 1rem;
+    padding-bottom: 10px;
     color: white;
 }
 
@@ -105,4 +109,22 @@ h2 {
     width: 10.5rem;
     height: 2.5rem;
     border-radius: 10rem;
+}
+
+.delete-item {
+    color: #c98484;
+    position: absolute;
+    right: 50%;
+    top: -15px;
+    cursor: pointer;
+    transition-timing-function: ease-in;
+    transition: all 0.5s;
+}
+
+.delete-item:hover {
+    color: #fff;
+}
+
+#forIcon {
+    position: relative;
 }

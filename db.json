@@ -1,32 +1,18 @@
 {
   "movies": [
     {
-      "name": "Lucifer",
-      "thumbnail": "images/large-movie2.jpg",
-      "categoryname": "Aksiyon",
-      "categoryId": 3,
+      "name": "q",
+      "thumbnail": "images/large-movie1.jpg",
+      "categoryname": "Korku",
+      "categoryId": 1,
       "id": 1
     },
     {
-      "name": "Luis",
-      "thumbnail": "images/large-movie1.jpg",
+      "name": "w",
+      "thumbnail": "images/large-movie2.jpg",
       "categoryname": "Komedi",
       "categoryId": 2,
       "id": 2
-    },
-    {
-      "name": "asdasda",
-      "thumbnail": "images/large-movie5.jpg",
-      "categoryname": "Aksiyon",
-      "categoryId": 3,
-      "id": 5
-    },
-    {
-      "name": "qwe",
-      "thumbnail": "images/large-movie5.jpg",
-      "categoryname": "Komedi",
-      "categoryId": 2,
-      "id": 6
     }
   ]
 }
