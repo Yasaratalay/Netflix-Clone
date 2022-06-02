@@ -38,7 +38,8 @@ const debounce = (func, wait) => {
     };
 };
 
-const modalToggle = () => $(".staticBackdrop").modal("toggle");
+ const modalToggle = () => $(".staticBackdrop").modal("toggle");
+ const deleteModalToggle = () => $(".deleteBackdrop").modal("toggle");
 
 
 // Update - Insert - Delete İşlemleri

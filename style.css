@@ -83,16 +83,6 @@ h2 {
     color: white;
 }
 
-/* Icon Style */
-.fa-magnifying-glass {
-    position: absolute;
-    color: #111;
-    font-size: 1.3rem;
-    top: 36px;
-    right: 5.7rem;
-    right: 325px;
-}
-
 
 .btn.btn-primary.staticBackdrop,
 .btn.btn-danger.deleteBackdrop {

@@ -20,6 +20,13 @@
       "categoryname": "Aksiyon",
       "categoryId": 3,
       "id": 5
+    },
+    {
+      "name": "qwe",
+      "thumbnail": "images/large-movie5.jpg",
+      "categoryname": "Komedi",
+      "categoryId": 2,
+      "id": 6
     }
   ]
 }
