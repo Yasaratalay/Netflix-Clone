@@ -17,6 +17,14 @@ const initialApp = () => {
 
 }
 
+const handleMovies = () => {
+    fetch("http://localhost:3000/movies")
+        .then(response => response.json())
+        .then(response => {
+            setMovies(response);
+        });
+}
+
 const modalToggle = () => $(".staticBackdrop").modal("toggle");
 const deleteModalToggle = () => $(".deleteBackdrop").modal("toggle");
 const debounce = (func, wait) => {
@@ -34,17 +42,55 @@ const debounce = (func, wait) => {
     };
 };
 
-const handleMovies = () => {
-    fetch("http://localhost:3000/movies")
+// Seçilen fotoğrafın yolu.
+$('input[type="file"]').change(function (e) {
+    fileName = e.target.files[0].name;
+    $(e.target).parent('div').find('.form-file-text').html(fileName)
+    fileName = "images/" + fileName;
+});
+
+// Search Input arama
+$(".searchInput").on("keydown", debounce((e) => {
+    fetch(`http://localhost:3000/movies?name_like=${e.target.value}`, {
+            method: 'GET'
+        })
         .then(response => response.json())
-        .then(response => {
-            setMovies(response);
-        });
+        .then(response => setMovies(response))
+        .catch(err => console.log("Search Error!"));
+}, 500));
+
+// Movie Filtering
+$("#searchCategory").on("change", () => {
+    let valueSelect = Number($('#searchCategory').val());
+    if (valueSelect >= 1) {
+        fetch(`http://localhost:3000/movies?categoryId=${valueSelect}`, {
+                method: 'GET'
+            })
+            .then(response => response.json())
+            .then(listUser => setMovies(listUser))
+            .catch(err => console.log("Search Category Error!"));
+    } else {
+        handleMovies();
+    }
+
+})
+
+// Movie Delete with Button
+$("#deleteMovie").on("click", () => {
+    deleteFilm = Number($('#deleteSearchList').val())
+    deleteMovies(deleteFilm);
+});
+
+// Movie Delete wih Icon
+function removeIcon() {
+    $(".delete-item").on("click", (e) => {
+        let ID = $(e.currentTarget).data("deleteid");
+        deleteMovies(ID);
+    })
 }
 
 // Film silme fonksiyonu
 const deleteMovies = (removeId) => {
-
     // Sweet Alert Silme işlemi uyarı mesajı
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
@@ -98,44 +144,6 @@ const deleteMovies = (removeId) => {
     })
 }
 
-// setMovies json daki tüm verileri set ediyor.
-const setMovies = (movies) => {
-    let originalMovie = $("#originals");
-    let deleteMovieFromList = $("#deleteSearchList");
-
-    originalMovie.children().remove();
-    deleteMovieFromList.children().remove();
-
-    // <a class="delete-item" data-deleteicon=${movie.id}> <i class="fa-solid fa-trash-can"></i></a> 
-    _.each(movies, function (movie) {
-        originalMovie.append(`<div id="forIcon">
-                                <img src="${movie.thumbnail}" alt="${movie.name}" data-movieid=${movie.id} class="img_Large">
-                                <i class="fa-solid fa-trash-can delete-item" data-deleteid=${movie.id} onclick="removeIcon()"></i>
-                              </div>
-                              `)
-        deleteMovieFromList.append(`<option value="${movie.id}">${movie.name}</option>`)
-    })
-
-    // Search Input arama
-    $(".searchInput").on("keydown", debounce((e) => {
-        fetch(`http://localhost:3000/movies?name_like=${e.target.value}`, {
-                method: 'GET'
-            })
-            .then(response => response.json())
-            .then(response => setMovies(response))
-            .catch(err => console.log("Search Error!"));
-    }, 500));
-
-}
-
-// Seçilen fotoğrafın yolu.
-$('input[type="file"]').change(function (e) {
-    fileName = e.target.files[0].name;
-    $(e.target).parent('div').find('.form-file-text').html(fileName)
-    fileName = "images/" + fileName;
-});
-
-
 // Movie Add
 $("#confirmMovie").click(() => {
     let movieName = document.querySelector("#movieName").value;
@@ -178,42 +186,30 @@ $("#confirmMovie").click(() => {
     }
 });
 
-// Movie Delete
-$("#deleteMovie").on("click", () => {
-    deleteFilm = Number($('#deleteSearchList').val())
-    deleteMovies(deleteFilm);
-});
 
+// setMovies json daki tüm verileri set ediyor.
+const setMovies = (movies) => {
+    let originalMovie = $("#originals");
+    let deleteMovieFromList = $("#deleteSearchList");
 
+    originalMovie.children().remove();
+    deleteMovieFromList.children().remove();
 
-// icon delete
-function removeIcon() {
-    $(".delete-item").on("click", (e) => {
-        let ID = $(e.currentTarget).data("deleteid");
-        deleteMovies(ID);
-        // fetch(`http://localhost:3000/movies/${ID}`, {
-        //         method: 'DELETE'
-        //     })
-        //     .then(refMovie => handleMovies())
-        //     .catch(err => console.log("Delete Icon Error!"));
+    // <a class="delete-item" data-deleteicon=${movie.id}> <i class="fa-solid fa-trash-can"></i></a> 
+    _.each(movies, function (movie) {
+        originalMovie.append(`<div id="forIcon">
+                                <img src="${movie.thumbnail}" alt="${movie.name}" data-movieid=${movie.id} class="img_Large">
+                                <i class="fa-solid fa-trash-can delete-item" data-deleteid=${movie.id} onclick="removeIcon()"></i>
+                              </div>
+                              `)
+        deleteMovieFromList.append(`<option value="${movie.id}">${movie.name}</option>`)
     })
 }
 
-// Movie Filtering
-$("#searchCategory").on("change", () => {
-    let valueSelect = Number($('#searchCategory').val());
-    if (valueSelect >= 1) {
-        fetch(`http://localhost:3000/movies?categoryId=${valueSelect}`, {
-                method: 'GET'
-            })
-            .then(response => response.json())
-            .then(listUser => setMovies(listUser))
-            .catch(err => console.log("Search Category Error!"));
-    } else {
-        handleMovies();
-    }
 
-})
+
+
+
 
 
 initialApp();

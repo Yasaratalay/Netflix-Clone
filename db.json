@@ -1,6 +1,5 @@
 {
-  "movies": [
-    {
+  "movies": [{
       "name": "q",
       "thumbnail": "images/large-movie1.jpg",
       "categoryname": "Korku",
@@ -8,8 +7,8 @@
       "id": 1
     },
     {
-      "name": "w",
-      "thumbnail": "images/large-movie2.jpg",
+      "name": "asdasdasdas",
+      "thumbnail": "images/large-movie6.jpg",
       "categoryname": "Komedi",
       "categoryId": 2,
       "id": 2
