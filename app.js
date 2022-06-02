@@ -149,7 +149,7 @@ $("#confirmMovie").click(() => {
     let movieName = document.querySelector("#movieName").value;
     let movieCategory = $('#movieCategory :selected').text();
 
-    if (movieName != "" && movieCategory != "Choose Movie...") {
+    if (movieName != "" && movieCategory != "") {
         const Toast = Swal.mixin({
             toast: true,
             position: 'top-end',
@@ -195,7 +195,6 @@ const setMovies = (movies) => {
     originalMovie.children().remove();
     deleteMovieFromList.children().remove();
 
-    // <a class="delete-item" data-deleteicon=${movie.id}> <i class="fa-solid fa-trash-can"></i></a> 
     _.each(movies, function (movie) {
         originalMovie.append(`<div id="forIcon">
                                 <img src="${movie.thumbnail}" alt="${movie.name}" data-movieid=${movie.id} class="img_Large">
